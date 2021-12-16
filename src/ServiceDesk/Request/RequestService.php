@@ -109,7 +109,7 @@ class RequestService
         $searchParameters = array_merge($defaultSearchParameters, $searchParameters);
 
         $result = $this->client->exec(
-            $this->client->createUrl('%s?%s', [$this->uri,], $searchParameters)
+            $this->client->createUrl('%s', [$this->uri], $searchParameters)
         );
 
         $requestData = json_decode($result, false);
